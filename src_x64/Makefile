@@ -1,11 +1,15 @@
-OUT_ZIP=Alpine.zip
-LNCR_EXE=Alpine.exe
+VERSION=3.18.4
+
+MAJOR_VERSION=$(echo $VERSION | cut -d. -f1,2)
+
+OUT_ZIP=Alpine-$(VERSION).zip
+LNCR_EXE=Alpine-$(VERSION).exe
 
 DLR=curl
 DLR_FLAGS=-L
-BASE_URL=https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-minirootfs-3.18.4-x86_64.tar.gz
+BASE_URL=https://dl-cdn.alpinelinux.org/alpine/v${MAJOR_VERSION}/releases/x86_64/alpine-minirootfs-${VERSION}-x86_64.tar.gz
 LNCR_ZIP_URL=https://github.com/yuk7/wsldl/releases/download/23072600/icons.zip
-LNCR_ZIP_EXE=Alpine.exe
+LNCR_ZIP_EXE=Alpine-$(VERSION).exe
 
 all: $(OUT_ZIP)
 
